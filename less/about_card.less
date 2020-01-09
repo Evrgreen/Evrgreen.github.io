@@ -1,0 +1,106 @@
+.about__container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  @media @mobile {
+    & > * {
+      transform: scale(0.4);
+    }
+  }
+}
+
+.about__card {
+  position: relative;
+  &:hover .face__front {
+    background: #ff0057;
+    box-shadow: -6px 2px 6px black;
+    transform: translateY(0);
+    & .about__content {
+      color: #fff;
+      opacity: 1;
+    }
+  }
+  &:hover .face__back {
+    transform: translateY(0);
+  }
+  &:hover .about__content h3 {
+    background-color: @reddit--orange;
+    color: white;
+  }
+}
+.about__content {
+  width: 100%;
+  & h3 {
+    background-color: grey;
+    font-size: 2rem;
+    position: absolute;
+    padding-left: 2%;
+    width: 100%;
+    bottom: -0.3%;
+    @media @mobile {
+      font-size: 2.5rem;
+    }
+  }
+  & a {
+    border: 3px solid skyblue;
+    border-radius: 5%;
+    color: #333;
+    display: inline-block;
+    font-weight: 900;
+    margin: 1.5rem 0 0;
+    padding: 3%;
+    text-decoration: none;
+  }
+}
+.content__image {
+  position: relative;
+  //   max-width: 100%;
+  width: 110%;
+  z-index: -1;
+}
+.face {
+  width: 30rem;
+  height: 20rem;
+  transition: 0.35s;
+  @media @mobile {
+    font-size: 1.5rem;
+  }
+
+  &__front {
+    border: 3px white solid;
+    box-sizing: border-box;
+    color: rgba(255, 253, 253, 0.726);
+    position: relative;
+    background: #ebf5fc;
+    display: grid;
+    .flexing(row, center, center);
+    box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.1),
+      6px 6px 20px rgba(0, 0, 0, 0.1);
+    transform: translateY(10rem);
+    & .about__content {
+      opacity: 0.2;
+      transition: 0.5s;
+      @media @mobile {
+        opacity: 0.6;
+      }
+    }
+  }
+  &__back {
+    position: relative;
+    background: #fff;
+    .flexing(row, center, center);
+    padding: 2rem;
+    // box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-10rem);
+    z-index: -1;
+    & p {
+      font-size: 1.3rem;
+      padding: 0;
+      margin: 0;
+      @media @mobile {
+        font-size: 1.8rem;
+      }
+    }
+  }
+}
