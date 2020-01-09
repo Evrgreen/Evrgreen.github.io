@@ -223,7 +223,7 @@ body::after {
 @media only screen and (min-width: 950px) {
   .navbar {
     border-bottom: solid 5px white;
-    background-color: rgba(0, 0, 0, 0.9);
+    background-color: rgba(0, 0, 0, 0.85);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -261,7 +261,6 @@ body::after {
     grid-template-rows: 1fr 40% 40%;
     grid-template-areas: "... ... ..." "... title ..." "... button ...";
     justify-content: flex-end;
-    box-shadow: -10 -10 40px rgba(0, 0, 0, 0.8);
   }
 }
 .hero::before {
@@ -350,7 +349,7 @@ body::after {
 .body__wrapper {
   display: grid;
   grid-row-gap: 10rem;
-  grid-template-columns: 1fr 90% 1fr;
+  grid-template-columns: 5% 90% 5%;
   grid-template-areas: "...title..." "...features..." "...cta..." "footer footer footer";
   position: relative;
 }
@@ -423,8 +422,7 @@ body::after {
 }
 .body__title h3 {
   margin-top: 3vh;
-  width: 70%;
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1.3rem;
   text-align: center;
 }
@@ -454,6 +452,11 @@ body::after {
   text-align: center;
   width: 90%;
 }
+@media only screen and (min-width: 950px) {
+  .cta p:nth-of-type(3) {
+    width: 85%;
+  }
+}
 .footer {
   grid-area: footer;
 }
@@ -461,7 +464,7 @@ body::after {
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-template-areas: "title title" "submit return" "save explore";
+  grid-template-areas: "submit return" "save explore";
   margin: 0 4vw;
 }
 @media only screen and (min-width: 950px) {
@@ -469,10 +472,15 @@ body::after {
     grid-template-columns: 45% 1fr 45%;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     width: 85%;
+    overflow: hidden;
     grid-template-areas: "submit ... ..." "return return..." "  ... save save " "  ... ... explore";
     justify-content: end;
     align-items: end;
     margin: 0 0 15vh 15vw;
+    transform: rotate(10deg);
+  }
+  .feature .card {
+    transform: rotate(-10deg);
   }
 }
 .feature h3 {
