@@ -9,6 +9,7 @@
     "footer footer footer";
   position: relative;
   @media @desktop {
+    grid-gap: 2rem;
     grid-template-columns: auto;
     grid-template-areas:
       "... ... title"
@@ -17,14 +18,14 @@
       "cta ... ..."
       "footer footer footer";
   }
+  //   creates the drop shadow gutters on mobile
   &::before,
   &::after {
-    // background-color: red;
-    box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 2px 0 3px rgba(0, 0, 0, 0.2);
     content: "";
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
     height: 100%;
     width: 5%;
     z-index: -1;
@@ -33,16 +34,20 @@
     }
   }
   &::after {
-    box-shadow: inset 2px 0 3px rgba(0, 0, 0, 0.2);
-    right: 0;
+    box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.2);
+
+    top: 0;
+    left: 0;
+    // changes into orange body stripe from top left on desktop view
     @media @desktop {
       background-image: linear-gradient(
         to top right,
         white 45%,
-        @reddit--orange 45%,
-        @reddit--orange 75%,
+        #ff4e0e 45%,
+        #ff4e0e 75%,
         white 75%
       );
+      box-shadow: none;
       content: "";
       overflow: hidden;
       width: 100%;
@@ -53,13 +58,31 @@
 }
 
 .body__title {
-  background-color: @reddit--orange;
-  letter-spacing: 0.09ch;
-  color: white;
-  font-size: 1.2rem;
   grid-area: title;
-  padding: 1.5rem 2rem;
   text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 0.09ch;
+  @media @desktop {
+    .flexing(column, flex-end, center);
+    width: 60%;
+    justify-self: end;
+  }
+  & h2 {
+    background-color: @reddit--orange;
+    color: white;
+    padding: 1.5rem 2rem;
+    @media @desktop {
+      background-color: rgba(0, 0, 0, 0);
+      color: black;
+    }
+  }
+  & h3 {
+    margin-top: 3vh;
+    width: 70%;
+    font-size: 1.1rem;
+    line-height: 1.3rem;
+    text-align: center;
+  }
 }
 .feature {
   grid-area: features;
@@ -94,22 +117,39 @@
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   grid-template-areas:
+    "title title"
     "submit return"
     "save explore";
   margin: 0 4vw;
   @media @desktop {
-    grid-template-columns: auto;
+    grid-template-columns: 45% 1fr 45%;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    // position: absolute;
+    // height: 100vh;
+    width: 85%;
     grid-template-areas:
-      "submit ... ... ..."
-      "... return ... ..."
-      "... ... save ..."
-      "... ... ... explore";
-    margin: 0;
+      "submit ... ..."
+      "return return..."
+      "  ... save save "
+      "  ... ... explore";
+    justify-content: end;
+    align-items: end;
+    margin: 0 0 15vh 15vw;
+    // & * {
+    //   //   .shadow_reset();
+    //   //   position: absolute;
+    // }
   }
-
+  & h3 {
+    grid-area: title;
+  }
   .submit {
     grid-area: submit;
     box-shadow: 3px 4px 3px rgba(0, 0, 0, 0.2);
+    @media @desktop {
+      .shadow_reset();
+      justify-self: center;
+    }
   }
   .return {
     font-size: 0.95rem;
@@ -117,17 +157,32 @@
     .bg_lighten(@reddit--orange, 5%);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2), 3px 0px 4px rgba(0, 0, 0, 0.3);
     z-index: -1;
+    @media @desktop {
+      .shadow_reset();
+      justify-self: end;
+      font-size: 1.3rem;
+    }
   }
   .save {
     grid-area: save;
     .bg_lighten(@reddit--orange, 15%);
     z-index: -3;
+    @media @desktop {
+      .shadow_reset();
+      justify-self: start;
+    }
   }
   .explore {
     grid-area: explore;
     .bg_lighten(@reddit--orange, 10%);
     box-shadow: -3px 0px 4px rgba(0, 0, 0, 0.2), 3px 3px 4px rgba(0, 0, 0, 0.3);
     z-index: -2;
+    justify-self: start;
+    @media @desktop {
+      .shadow_reset();
+      justify-self: center;
+      margin: 1vh 0 0 2vw;
+    }
   }
 }
 .footer {
@@ -139,4 +194,6 @@
   background-color: black;
   color: white;
   height: 5vh;
+  position: abosolute;
+  bottom: 0;
 }

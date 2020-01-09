@@ -1,6 +1,7 @@
 // Variables
 
 @reddit--orange: #ff4500;
+@accent--orange: #ff4e0e;
 
 // Mix-ins
 
@@ -42,6 +43,10 @@
 }
 .bg_lighten(@bg-color,@percent) {
   background-color: lighten(@bg-color, @percent);
+}
+.shadow_reset() {
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0);
 }
 @highdensity: ~"only screen and (-webkit-min-device-pixel-ratio: 1.5)",
   ~"only screen and (min--moz-device-pixel-ratio: 1.5)",

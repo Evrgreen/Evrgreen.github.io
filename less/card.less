@@ -5,6 +5,10 @@
   height: 20vh;
   position: relative;
   text-align: center;
+  @media @desktop {
+    font-size: 1.3rem;
+    width: 60%;
+  }
 
   &__icon {
     display: inline-block;
@@ -17,7 +21,7 @@
   }
 
   &__header {
-    font-size: 1.5rem;
+    // font-size: 1.5em;
     // font-weight: 600;
     letter-spacing: 0.12ch;
     margin-bottom: 2.5vh;
@@ -30,5 +34,8 @@
     margin-bottom: 10%;
     line-height: 2.5vh;
     padding: 0 3vw;
+    @media @desktop {
+      padding: 0;
+    }
   }
 }
