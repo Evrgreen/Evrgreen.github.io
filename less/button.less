@@ -8,6 +8,14 @@
   width: 45%;
   text-align: center;
   margin: 0 auto;
+  @media @desktop {
+    display: flex;
+    display: inline-block;
+    align-self: start;
+    justify-self: end;
+    background-color: red;
+    margin: 0;
+  }
   & .btn {
     .btn__primary(100%, #ff1001, white, 1.5rem, 0.1rem);
   }

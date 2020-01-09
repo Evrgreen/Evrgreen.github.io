@@ -16,9 +16,19 @@
   position: relative;
   opacity: 0.95;
   text-align: center;
+  @media @desktop {
+    height: 100vh;
+    grid-template-columns: 2fr 50% 1fr;
+    grid-template-rows: 1fr 40% 40%;
+    grid-template-areas:
+      "... ... ..."
+      "... title ..."
+      "... button ...";
+    justify-content: flex-end;
+  }
   &::before {
     background-image: url(../reddit_text.png);
-
+    background-repeat: repeat;
     background-size: cover;
     content: "Hello";
     // background-color: rgb(0, 0, 0);
@@ -29,6 +39,9 @@
     opacity: 0.03;
     width: 100%;
     z-index: -1;
+    @media @desktop {
+      height: 100vh;
+    }
   }
 
   &__title {
@@ -36,12 +49,39 @@
     font-weight: 900;
     font-size: 2.5rem;
     width: 90vw;
+    @media @desktop {
+      //   postion: relative;
+      text-align: right;
+      font-size: 4vw;
+      &::after,
+      &::before {
+        content: "";
+        border-top: 5px solid @reddit--orange;
+        position: absolute;
+        bottom: 60vh;
+        right: 0;
+
+        width: 15%;
+      }
+      &::before {
+        transform: rotate(90deg);
+        right: 11vw;
+        top: 39vh;
+        width: 8%;
+      }
+    }
 
     & span {
+      //   font-size: 2rem;
       color: @reddit--orange;
     }
   }
   &__btn {
     grid-area: button;
+  }
+}
+.logo--mobile {
+  @media @desktop {
+    display: none;
   }
 }

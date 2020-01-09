@@ -133,6 +133,36 @@ table {
 body {
   font-family: "Poppins", sans-serif;
 }
+body::after {
+  /*This adds a label in the top-left corner that displays the current media query state.*/
+  background: red;
+  color: white;
+  content: "undefined";
+  left: 0;
+  padding: 0.5em 1em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  z-index: 99;
+}
+@media only screen and (max-width: 529px) {
+  body::after {
+    background: orange;
+    content: "mobile";
+  }
+}
+@media only screen and (min-width: 530px) and (max-width: 949px) {
+  body::after {
+    background: purple;
+    content: "tablet";
+  }
+}
+@media only screen and (min-width: 950px) {
+  body::after {
+    background: green;
+    content: "desktop";
+  }
+}
 .btn {
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
   text-decoration: none;
@@ -142,6 +172,16 @@ body {
   width: 45%;
   text-align: center;
   margin: 0 auto;
+}
+@media only screen and (min-width: 950px) {
+  .hero__btn {
+    display: flex;
+    display: inline-block;
+    align-self: start;
+    justify-self: end;
+    background-color: red;
+    margin: 0;
+  }
 }
 .hero__btn .btn {
   background-color: #ff1001;
@@ -180,14 +220,26 @@ body {
   background-color: white;
   color: #ff4500;
 }
-.navbar {
-  border: 1px solid black;
-  display: flex;
-  position: relative;
-  height: 5vh;
-}
-.navbar__list {
-  display: flex;
+@media only screen and (min-width: 950px) {
+  .navbar {
+    background-color: rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+  }
+  .navbar__list {
+    display: flex;
+  }
+  .navbar__links {
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    margin-right: 5vw;
+  }
 }
 .hero {
   background-size: cover;
@@ -202,8 +254,18 @@ body {
   opacity: 0.95;
   text-align: center;
 }
+@media only screen and (min-width: 950px) {
+  .hero {
+    height: 100vh;
+    grid-template-columns: 2fr 50% 1fr;
+    grid-template-rows: 1fr 40% 40%;
+    grid-template-areas: "... ... ..." "... title ..." "... button ...";
+    justify-content: flex-end;
+  }
+}
 .hero::before {
   background-image: url(../reddit_text.png);
+  background-repeat: repeat;
   background-size: cover;
   content: "Hello";
   position: absolute;
@@ -214,17 +276,48 @@ body {
   width: 100%;
   z-index: -1;
 }
+@media only screen and (min-width: 950px) {
+  .hero::before {
+    height: 100vh;
+  }
+}
 .hero__title {
   grid-area: title;
   font-weight: 900;
   font-size: 2.5rem;
   width: 90vw;
 }
+@media only screen and (min-width: 950px) {
+  .hero__title {
+    text-align: right;
+    font-size: 4vw;
+  }
+  .hero__title::after,
+  .hero__title::before {
+    content: "";
+    border-top: 5px solid #ff4500;
+    position: absolute;
+    bottom: 60vh;
+    right: 0;
+    width: 15%;
+  }
+  .hero__title::before {
+    transform: rotate(90deg);
+    right: 11vw;
+    top: 39vh;
+    width: 8%;
+  }
+}
 .hero__title span {
   color: #ff4500;
 }
 .hero__btn {
   grid-area: button;
+}
+@media only screen and (min-width: 950px) {
+  .logo--mobile {
+    display: none;
+  }
 }
 .body__wrapper {
   display: grid;
