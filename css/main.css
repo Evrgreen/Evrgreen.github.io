@@ -346,6 +346,24 @@ body::after {
     z-index: 950;
   }
 }
+.about__header {
+  background-image: linear-gradient(white 50%, #ff4500 50%);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-align: center;
+  height: 40vh;
+  position: relative;
+}
+.about__header h1 {
+  background-color: white;
+  border-radius: 0.5rem;
+  display: inline-block;
+  width: 90%;
+}
 .body__wrapper {
   display: grid;
   grid-row-gap: 10rem;
@@ -601,18 +619,14 @@ body::after {
 .about__container {
   width: 100%;
   position: relative;
-  display: flex;
-  justify-content: space-between;
-}
-@media only screen and (max-width: 529px) {
-  .about__container > * {
-    transform: scale(0.4);
-  }
 }
 .about__card {
+  display: inline-block;
+  width: auto;
   position: relative;
 }
 .about__card:hover .face__front {
+  display: inline-block;
   background: #ff0057;
   box-shadow: -6px 2px 6px black;
   transform: translateY(0);
@@ -633,16 +647,10 @@ body::after {
 }
 .about__content h3 {
   background-color: grey;
-  font-size: 2rem;
   position: absolute;
   padding-left: 2%;
   width: 100%;
   bottom: -0.3%;
-}
-@media only screen and (max-width: 529px) {
-  .about__content h3 {
-    font-size: 2.5rem;
-  }
 }
 .about__content a {
   border: 3px solid skyblue;
@@ -650,7 +658,6 @@ body::after {
   color: #333;
   display: inline-block;
   font-weight: 900;
-  margin: 1.5rem 0 0;
   padding: 3%;
   text-decoration: none;
 }
@@ -660,14 +667,11 @@ body::after {
   z-index: -1;
 }
 .face {
-  width: 30rem;
-  height: 20rem;
+  width: 14rem;
+  height: 10rem;
   transition: 0.35s;
 }
 @media only screen and (max-width: 529px) {
-  .face {
-    font-size: 1.5rem;
-  }
 }
 .face__front {
   border: 3px white solid;
@@ -680,8 +684,7 @@ body::after {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  box-shadow: -6px -6px 20px rgba(255, 255, 255, 0.1), 6px 6px 20px rgba(0, 0, 0, 0.1);
-  transform: translateY(10rem);
+  transform: translateY(5rem);
 }
 .face__front .about__content {
   opacity: 0.2;
@@ -699,20 +702,25 @@ body::after {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 2rem;
-  transform: translateY(-10rem);
+  padding: 1rem;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  transform: translateY(-5rem);
   z-index: -1;
 }
 .face__back p {
-  font-size: 1.3rem;
-  padding: 0;
+  padding: 1rem;
   margin: 0;
 }
 @media only screen and (max-width: 529px) {
-  .face__back p {
-    font-size: 1.8rem;
-  }
 }
-body {
-  background-color: red;
+.card__wrapper {
+  background-color: #ff4500;
+}
+.about__container {
+  width: 100%;
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
 }
