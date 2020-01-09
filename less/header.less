@@ -13,7 +13,23 @@
   justify-content: center;
   align-items: center;
   height: 65vh;
+  position: relative;
+  opacity: 0.95;
   text-align: center;
+  &::before {
+    background-image: url(../reddit_text.png);
+
+    background-size: cover;
+    content: "Hello";
+    // background-color: rgb(0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 65vh;
+    opacity: 0.03;
+    width: 100%;
+    z-index: -1;
+  }
 
   &__title {
     grid-area: title;
