@@ -1,0 +1,42 @@
+// Variables
+
+@reddit--orange: #ff4500;
+
+// Mix-ins
+
+.trans(@element:all,@time:300ms,@ease:ease) {
+  transition: @element @time @ease;
+}
+
+// Mix-in that applies display flex and takes 3 argumenets
+// direction: the desired flex direction
+// justify: justify-content value
+// align: align-items value
+.flexing(@direction,@justify,@align) {
+  display: flex;
+  flex-direction: @direction;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+// Mixin that creates a button takes 5 arguments
+// width: desired width of button, default value: 90% of parent container
+// bg-color: desired background color
+// font-color: desired color of items inside button
+// font-size: desired font-size
+// b-radius: desired border radius of button, default value: 2rem
+
+.btn__primary(@width:90%, @bg-color,@font-color,@font-size, @b-radius:2rem) {
+  background-color: @bg-color;
+  border-radius: @b-radius;
+  color: @font-color;
+  font-size: @font-size;
+  .flexing(row, center, center);
+  padding: (@font-size*.3) 0;
+  width: @width;
+  &:hover {
+    .trans(all, 400ms, ease-in-out);
+    background-color: @font-color;
+    color: @bg-color;
+  }
+}

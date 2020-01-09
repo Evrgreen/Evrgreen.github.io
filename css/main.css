@@ -124,9 +124,41 @@ table {
 }
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
   font-size: 62.5%;
   margin: 0;
   padding: 0;
+  max-width: 100%;
+}
+body {
+  font-family: "Poppins", sans-serif;
+}
+.btn {
+  box-shadow: 1px 2px 3px #6d6b6b;
+  justify-self: center;
+  width: 30vw;
+}
+.btn__link {
+  background-color: #ff4500;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.45rem 0;
+  width: 100%;
+  text-decoration: none;
+}
+.btn__link:hover {
+  transition: all 400ms ease-in-out;
+  background-color: white;
+  color: #ff4500;
+}
+.hero__btn {
+  background-color: green;
+  grid-area: button;
 }
 .navbar {
   border: 1px solid black;
@@ -138,5 +170,126 @@ table {
   display: flex;
 }
 .hero {
-  background-color: green;
+  background-size: cover;
+  background-color: black;
+  color: white;
+  display: grid;
+  grid-template-areas: "logo" "title" "button";
+  justify-content: center;
+  align-items: center;
+  height: 65vh;
+  text-align: center;
+}
+.hero__title {
+  grid-area: title;
+  font-weight: 900;
+  font-size: 2.5rem;
+  width: 90vw;
+}
+.hero__title span {
+  color: #ff4500;
+}
+.hero__btn {
+  grid-area: button;
+}
+.body__wrapper {
+  display: grid;
+  grid-row-gap: 3rem;
+  grid-template-columns: 1fr 80% 1fr;
+  grid-template-areas: "...title..." "...features..." "...cta..." "footer footer footer";
+}
+.body__title {
+  background-color: #ff4500;
+  color: white;
+  font-size: 1.2rem;
+  grid-area: title;
+  padding: 2rem 3rem;
+  text-align: center;
+}
+.feature {
+  grid-area: features;
+}
+.cta {
+  font-weight: 1.2rem;
+  grid-area: cta;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cta p {
+  margin-bottom: 1.3rem;
+}
+.cta p:nth-of-type(3) {
+  margin: 3rem 0;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 60%;
+}
+.cta__btn {
+  width: 30%;
+}
+.cta .btn {
+  background-color: #ff4500;
+  border-radius: 0.3rem;
+  color: white;
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0.42rem 0;
+  width: 100%;
+}
+.cta .btn:hover {
+  transition: all 400ms ease-in-out;
+  background-color: white;
+  color: #ff4500;
+}
+.footer {
+  grid-area: footer;
+}
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: "submit return" "save explore";
+}
+.feature .submit {
+  grid-area: submit;
+}
+.feature .return {
+  grid-area: return;
+}
+.feature .save {
+  grid-area: save;
+}
+.feature .explore {
+  grid-area: explore;
+}
+.footer {
+  grid-area: footer;
+  background-color: black;
+}
+.card {
+  background-color: #ff4500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+  position: relative;
+}
+.card__icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: inline-block;
+  margin-bottom: 2vh;
+  padding-top: 3vh;
+  width: 100%;
+}
+.card__header {
+  margin-bottom: 2.5vh;
 }

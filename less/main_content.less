@@ -1,0 +1,71 @@
+.body__wrapper {
+  display: grid;
+  grid-row-gap: 3rem;
+  grid-template-columns: 1fr 80% 1fr;
+  grid-template-areas:
+    "...title..."
+    "...features..."
+    "...cta..."
+    "footer footer footer";
+}
+
+.body__title {
+  background-color: @reddit--orange;
+  color: white;
+  font-size: 1.2rem;
+  grid-area: title;
+  padding: 2rem 3rem;
+  text-align: center;
+}
+.feature {
+  grid-area: features;
+}
+.cta {
+  font-weight: 1.2rem;
+  grid-area: cta;
+  .flexing(column, center, center);
+
+  & p {
+    margin-bottom: 1.3rem;
+  }
+  p:nth-of-type(3) {
+    margin: 3rem 0;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 60%;
+  }
+  &__btn {
+    width: 30%;
+  }
+  .btn {
+    .btn__primary(100%, @reddit--orange, white, 1.4rem, .3rem);
+  }
+}
+.footer {
+  grid-area: footer;
+}
+.feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+    "submit return"
+    "save explore";
+
+  .submit {
+    grid-area: submit;
+  }
+  .return {
+    grid-area: return;
+  }
+  .save {
+    grid-area: save;
+  }
+  .explore {
+    grid-area: explore;
+  }
+}
+.footer {
+  grid-area: footer;
+  background-color: black;
+}

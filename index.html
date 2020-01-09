@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,800&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
   </head>
   <body>
@@ -24,12 +28,14 @@
     </nav>
     <div class="wrapper">
       <header class="hero">
-        <div class="logo--mobile"></div>
+        <div class="logo--mobile">
+          <img src="images/logo.svg" alt="Post Here Logo" />
+        </div>
         <h1 class="hero__title ">
           TAKE THE GUESSWORK OUT OF <span>REDDIT</span>
         </h1>
-        <div class="btn__container">
-          <a href="#" class="btn__link">START NOW</a>
+        <div class="hero__btn btn">
+          <a href="#" class="btn__link">Start Posting</a>
         </div>
       </header>
       <div class="body__wrapper">
@@ -39,30 +45,34 @@
           </h2>
         </div>
         <section class="feature">
-          <div class="card">
-            <header class="card_header">
+          <div class="card submit">
+            <div class="card__icon"><i>#</i></div>
+            <header class="card__header">
               <h3>SUBMIT</h3>
             </header>
-            <p class="card__content">Submit your post to Post Here</p>
+            <p class="card__content ">Submit your post to Post Here</p>
           </div>
-          <div class="card">
-            <header class="card_header">
+          <div class="card return">
+            <div class="card__icon"><i>#</i></div>
+            <header class="card__header">
               <h3>RETURN</h3>
             </header>
             <p class="card__content">
               Post Here will send you back the top suggestted subreddits
             </p>
           </div>
-          <div class="card">
-            <header class="card_header">
+          <div class="card save">
+            <div class="card__icon"><i>#</i></div>
+            <header class="card__header">
               <h3>EXPLORE</h3>
             </header>
-            <p class="card__content">
+            <p class="card__content explore">
               Search your profile for your saved subreddits
             </p>
           </div>
-          <div class="card">
-            <header class="card_header">
+          <div class="card explore">
+            <div class="card__icon"><i>#</i></div>
+            <header class="card__header">
               <h3>SAVE</h3>
             </header>
             <p class="card__content">Save the suggestion to your profile</p>
@@ -72,8 +82,8 @@
           <p class="cta__text">WITH OVER 1.8 MILLION SUBREDDITS</p>
           <p class="cta__text">AND 1500+ CREATED EACH DAY</p>
           <p class="cta__text">IT’S DANGEROUS TO GO ALONE TAKE THIS</p>
-          <div class="btn__container">
-            <a href="#" class="btn__link">START NOW</a>
+          <div class="cta__btn">
+            <a href="#" class="btn__link btn">START POSTING</a>
           </div>
         </section>
         <section class="footer">FOOTER</section>
