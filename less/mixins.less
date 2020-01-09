@@ -32,11 +32,14 @@
   color: @font-color;
   font-size: @font-size;
   .flexing(row, center, center);
-  padding: (@font-size*.3) 0;
+  padding: (@font-size*.7) 0;
   width: @width;
   &:hover {
     .trans(all, 400ms, ease-in-out);
     background-color: @font-color;
     color: @bg-color;
   }
+}
+.bg_lighten(@bg-color,@percent) {
+  background-color: lighten(@bg-color, @percent);
 }

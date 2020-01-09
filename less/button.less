@@ -1,16 +1,14 @@
 .btn {
   box-shadow: 1px 2px 3px rgb(109, 107, 107);
-  justify-self: center;
-  width: 30vw;
-
-  &__link {
-    .btn__primary(100%, @reddit--orange, white, 1.5rem, 0.3rem);
-
-    text-decoration: none;
-  }
+  text-decoration: none;
 }
 // (@width:90%, @bg-color,@font-color,@font-size, @b-radius:2rem)
 .hero__btn {
-  background-color: green;
   grid-area: button;
+  width: 50%;
+  text-align: center;
+  margin: 0 auto;
+  & .btn {
+    .btn__primary(100%, #ff1001, white, 1.8rem, 0.2rem);
+  }
 }
