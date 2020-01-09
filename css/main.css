@@ -222,7 +222,8 @@ body::after {
 }
 @media only screen and (min-width: 950px) {
   .navbar {
-    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: solid 5px white;
+    background-color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -235,7 +236,7 @@ body::after {
   }
   .navbar__links {
     color: white;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     font-weight: 600;
     text-decoration: none;
     margin-right: 5vw;
@@ -281,6 +282,20 @@ body::after {
     height: 100vh;
   }
 }
+.hero::after {
+  visibility: hidden;
+}
+@media only screen and (min-width: 950px) {
+  .hero::after {
+    visibility: visible;
+    content: "hello";
+    width: 60%;
+    height: 90vh;
+    background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0) 50%, #ff4500 50%);
+    position: absolute;
+    bottom: 0;
+  }
+}
 .hero__title {
   grid-area: title;
   font-weight: 900;
@@ -319,6 +334,12 @@ body::after {
     display: none;
   }
 }
+.logo--desktop {
+  position: absolute;
+  bottom: 0.05%;
+  left: 0.05%;
+  z-index: 950;
+}
 .body__wrapper {
   display: grid;
   grid-row-gap: 10rem;
@@ -326,7 +347,14 @@ body::after {
   grid-template-areas: "...title..." "...features..." "...cta..." "footer footer footer";
   position: relative;
 }
-.body__wrapper::before {
+@media only screen and (min-width: 950px) {
+  .body__wrapper {
+    grid-template-columns: auto;
+    grid-template-areas: "... ... title" "features features features" "features features features" "cta ... ..." "footer footer footer";
+  }
+}
+.body__wrapper::before,
+.body__wrapper::after {
   box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.2);
   content: "";
   position: absolute;
@@ -336,15 +364,15 @@ body::after {
   width: 5%;
   z-index: -1;
 }
+@media only screen and (min-width: 950px) {
+  .body__wrapper::before,
+  .body__wrapper::after {
+    content: none;
+  }
+}
 .body__wrapper::after {
   box-shadow: inset 2px 0 3px rgba(0, 0, 0, 0.2);
-  content: "";
-  position: absolute;
-  top: 0;
   right: 0;
-  height: 100%;
-  width: 5%;
-  z-index: -1;
 }
 .body__title {
   background-color: #ff4500;
@@ -390,6 +418,13 @@ body::after {
   grid-template-rows: 1fr 1fr;
   grid-template-areas: "submit return" "save explore";
   margin: 0 4vw;
+}
+@media only screen and (min-width: 950px) {
+  .feature {
+    grid-template-columns: auto;
+    grid-template-areas: "submit ... ... ..." "... return ... ..." "... ... save ..." "... ... ... explore";
+    margin: 0;
+  }
 }
 .feature .submit {
   grid-area: submit;

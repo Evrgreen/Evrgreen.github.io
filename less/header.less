@@ -43,6 +43,34 @@
       height: 100vh;
     }
   }
+  //   &::after {
+  //     background-color: @reddit--orange;
+  //     content: "Hello";
+  //     position: absolute;
+  //     top: 0;
+  //     left: -30%;
+  //     height: 200vh;
+  //     overflow: hidden;
+  //     transform: rotate(-35deg);
+  //     transform-origin: center;
+  //     width: 50%;
+  //   }
+  &::after {
+    visibility: hidden;
+    @media @desktop {
+      visibility: visible;
+      content: "hello";
+      width: 60%;
+      height: 90vh;
+      background-image: linear-gradient(
+        to bottom left,
+        rgba(0, 0, 0, 0) 50%,
+        @reddit--orange 50%
+      );
+      position: absolute;
+      bottom: 0;
+    }
+  }
 
   &__title {
     grid-area: title;
@@ -84,4 +112,10 @@
   @media @desktop {
     display: none;
   }
+}
+.logo--desktop {
+  position: absolute;
+  bottom: 0.05%;
+  left: 0.05%;
+  z-index: 950;
 }

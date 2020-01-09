@@ -8,7 +8,17 @@
     "...cta..."
     "footer footer footer";
   position: relative;
-  &::before {
+  @media @desktop {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "... ... title"
+      "features features features"
+      "features features features"
+      "cta ... ..."
+      "footer footer footer";
+  }
+  &::before,
+  &::after {
     // background-color: red;
     box-shadow: inset -2px 0 3px rgba(0, 0, 0, 0.2);
     content: "";
@@ -18,16 +28,13 @@
     height: 100%;
     width: 5%;
     z-index: -1;
+    @media @desktop {
+      content: none;
+    }
   }
   &::after {
     box-shadow: inset 2px 0 3px rgba(0, 0, 0, 0.2);
-    content: "";
-    position: absolute;
-    top: 0;
     right: 0;
-    height: 100%;
-    width: 5%;
-    z-index: -1;
   }
 }
 
@@ -76,6 +83,15 @@
     "submit return"
     "save explore";
   margin: 0 4vw;
+  @media @desktop {
+    grid-template-columns: auto;
+    grid-template-areas:
+      "submit ... ... ..."
+      "... return ... ..."
+      "... ... save ..."
+      "... ... ... explore";
+    margin: 0;
+  }
 
   .submit {
     grid-area: submit;
