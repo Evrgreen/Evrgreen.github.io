@@ -12,16 +12,17 @@
     <title>Post Here</title>
   </head>
   <body>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" />
     <nav class="navbar">
       <div class="navbar__logo"><img src="images/logo.svg" alt="" /></div>
       <ul class="navbar__list">
-        <li class="navbar__list__items">
+        <li class="navbar__list__items home__item">
           <a href="#" class="navbar__links">HOME</a>
         </li>
-        <li class="navbar__list__items">
+        <li class="navbar__list__items home__item">
           <a href="about.html" class="navbar__links">ABOUT US</a>
         </li>
-        <li class="navbar__list__items">
+        <li class="navbar__list__items home__item">
           <a
             href="https://posthere-subreddit.herokuapp.com/"
             class="navbar__links"
@@ -29,6 +30,9 @@
           >
         </li>
       </ul>
+      <label for="nav-toggle" class="nav-toggle-label home__label"
+        ><span></span
+      ></label>
     </nav>
     <div class="wrapper">
       <header class="hero">

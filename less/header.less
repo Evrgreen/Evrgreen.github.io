@@ -27,7 +27,7 @@
 
   //   The background image of text with opacity applied
   &::before {
-    background-image: url(../reddit_text.png);
+    background-image: url(../images/reddit_text.png);
     background-repeat: repeat;
     background-size: cover;
     content: "Hello";
@@ -121,17 +121,25 @@
 /////////////////////about header styles
 
 .about__header {
-  background-image: linear-gradient(white 50%, @reddit--orange 50%);
   .flexing(row, center, center);
   font-size: 2.5rem;
   font-weight: 700;
-  text-align: center;
-  height: 40vh;
+  height: 80vh;
+  padding-top: 15rem;
   position: relative;
+  text-align: center;
   & h1 {
-    background-color: white;
+    font-weight: 900;
+    color: white;
+    position: relative;
+    top: 8%;
+    background-color: @reddit--orange;
     border-radius: 0.5rem;
     display: inline-block;
     width: 90%;
+    @media @desktop {
+      top: 25%;
+      padding-bottom: 2rem;
+    }
   }
 }
