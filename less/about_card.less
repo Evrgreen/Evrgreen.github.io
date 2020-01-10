@@ -45,9 +45,10 @@
 }
 .content__image {
   position: relative;
-  //   max-width: 100%;
+  max-width: 100%;
   width: 110%;
-  z-index: -1;
+  overflow: hidden;
+  z-index: -999;
 }
 .face {
   width: 14rem;
@@ -69,7 +70,7 @@
     transform: translateY(5rem);
     z-index: 10;
     & .about__content {
-      opacity: 0.2;
+      opacity: 0.7;
       transition: 0.5s;
       @media @mobile {
         opacity: 0.6;

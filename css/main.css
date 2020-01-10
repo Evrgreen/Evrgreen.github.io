@@ -736,8 +736,10 @@ body {
 }
 .content__image {
   position: relative;
+  max-width: 100%;
   width: 110%;
-  z-index: -1;
+  overflow: hidden;
+  z-index: -999;
 }
 .face {
   width: 14rem;
@@ -762,7 +764,7 @@ body {
   z-index: 10;
 }
 .face__front .about__content {
-  opacity: 0.2;
+  opacity: 0.7;
   transition: 0.5s;
 }
 @media only screen and (max-width: 529px) {
