@@ -1,7 +1,45 @@
+.about__wrapper {
+  width: 100vw;
+  display: grid;
+  grid-template-areas:
+    "nav nav nav"
+    "header header header"
+    "... cards ..."
+    "footer footer footer";
+  grid-template-columns: 1fr 80% 1fr;
+  grid-template-rows: auto auto 1fr auto;
+  align-items: space-around;
+}
+#about__nav {
+  grid-area: nav;
+}
+.about__header {
+  grid-area: header;
+}
+
 .about__container {
-  background-color: @reddit--orange;
-  width: 100%;
+  background-color: white;
+  grid-area: cards;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+  &::before,
+  &::after {
+    content: "";
+    box-shadow: inset 3px 0 3px rgba(0, 0, 0, 0.5);
+    background-color: 0, 0, 0, 0.4;
+    position: absolute;
+    top: 0;
+    right: -10%;
+    width: 9%;
+    height: 100%;
+    z-index: -5;
+  }
+  &::after {
+    box-shadow: inset -3px 0 3px rgba(0, 0, 0, 0.5);
+    left: -10%;
+  }
+}
+footer {
+  grid-area: footer;
 }

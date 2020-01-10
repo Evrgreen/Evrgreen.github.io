@@ -12,7 +12,7 @@
     transition: transform 400ms ease-in-out;
     @media @desktop {
       transform: scale(1, 1);
-      width: 50%;
+      // width: 50%;
     }
   }
   a {
@@ -31,7 +31,7 @@
     font-weight: 600;
     padding-right: 1rem;
     text-decoration: none;
-    margin-right: 5vw;
+    // margin-right: 5vw;
   }
   @media @desktop {
     border-bottom: solid 5px white;
@@ -44,9 +44,6 @@
       text-align: right;
       display: flex;
     }
-
-    &__links {
-    }
   }
 }
 #nav-toggle {
@@ -54,6 +51,8 @@
   &:checked ~ nav ul {
     transform: scale(1, 1);
     & a {
+      margin-bottom: 1vh;
+      font-size: 1.3rem;
       opacity: 1;
       .trans(opacity, 100, ease-in-out);
       transition-delay: 250ms;
