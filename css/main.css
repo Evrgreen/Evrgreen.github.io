@@ -621,12 +621,10 @@ body::after {
   position: relative;
 }
 .about__card {
-  display: inline-block;
   width: auto;
   position: relative;
 }
 .about__card:hover .face__front {
-  display: inline-block;
   background: #ff0057;
   box-shadow: -6px 2px 6px black;
   transform: translateY(0);
@@ -713,14 +711,8 @@ body::after {
 }
 @media only screen and (max-width: 529px) {
 }
-.card__wrapper {
-  background-color: #ff4500;
-}
 .about__container {
   width: 100%;
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr;
-  justify-content: center;
-  align-items: center;
+  display: flex;
+  justify-content: space-around;
 }
